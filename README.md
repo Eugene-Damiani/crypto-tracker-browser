@@ -1,8 +1,13 @@
-<h1>
-  Cyrpto Tracker
-  </h1>
-  The purpose of thie site is to keep track of your current holdings of your currency and the location. This will simply your life and make sure you never forget which exchange or amount. 
+
+  ## Cyrpto Tracker
+    The purpose of thie site is to keep track of your current holdings of your currency and the location. This will simply your life and make sure you never forget which exchange or amount.
+    
+  ##  Important Links
   
+  [Deployed API](https://github.com/Eugene-Damiani/crypto-tracker-api)
+  
+ 
+  ## User Story
  Use a front-end Javascript app to communicate with your API (both read and write) and render data that it receives in the browser.
  Use jQuery for DOM manipulation and event handling.
  Use Handlebars for view rendering.
