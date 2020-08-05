@@ -17,4 +17,4 @@
 
 Later versions will allow to have seamless trainging ablilty and marketpalce. 
 
-[WireFrame-CT.pdf](https://github.com/Eugene-Damiani/crypto-tracker-browser/files/5029140/WireFrame-CT.pdf)
+![WireFrame-CT](https://user-images.githubusercontent.com/65584864/89428091-dc9d1a80-d6f0-11ea-9b6a-3010bdcf0b08.jpg)
