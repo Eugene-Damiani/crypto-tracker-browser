@@ -2,8 +2,8 @@
 
 let apiUrl
 const apiUrls = {
-  production: '<replace-with-heroku-url>',
-  development: 'http://localhost:4741'
+  production: 'https://intense-everglades-73204.herokuapp.com',
+  development: 'https://intense-everglades-73204.herokuapp.com'
 }
 
 if (window.location.hostname === 'localhost') {
