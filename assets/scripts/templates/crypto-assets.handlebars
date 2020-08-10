@@ -1,0 +1,26 @@
+{{#each cyptos as |crypto|}}
+  {{log crypto}}
+  <section data-id="{{crypto.id}}">
+    <h6>Asset:</h6>
+    <h3>
+      {{limit crypto.asset 20}}
+    </h3>
+    <h6>Amount:</h6>
+    <p>
+      {{#if crypto.amount}}
+        {{crypto.amount}}
+      {{else}}
+        0
+      {{/if}}
+    </p>
+    <h6>Exchange:</h6>
+    <p>
+      {{#if crypto.exchange}}
+        {{crypto.exchange}}
+        {{else}}
+        No Exchange listed
+        {{/if}}
+    </p>
+  </section>
+
+{{/each}}
