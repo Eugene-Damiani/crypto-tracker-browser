@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Crypto Tracker</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,10 +12,12 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Crypto Tracker</h1>
-      <button type = 'submit' id = "">Crypto Asset</button>
-<!-- <button type = 'submit' id = 'update-game'>Update Game</button> -->
-<button type ='submit' id= "">Games Played</button>
+    <nav class="navbar">
+    <h2 id = 'message'> </h2>
+
+      <h1>
+      <img src ='assets/styles/Brave.png' alt= 'bitcoin' width = '60' height="50">Crypto Tracker</h1>
+    </nav>
 <form id ="change-password">
 <input type= 'password' name='passwords[old]' placeholder ='Old Password'>
 <input type= 'password' name='passwords[new]' placeholder = 'New Password'>
@@ -24,25 +26,48 @@
 <form id='sign-out'>
 <button type = 'submit'>Sign Out</button>
 </form>
-
+<p></p>
+<div class = 'auth'>
     <form id="sign-up">
+      <p></p>
       <input type = 'text' name='credentials[email]' placeholder = 'E-mail'>
       <input type = 'password' name='credentials[password]' placeholder = 'Password'>
       <input type =  'password' name='credentials[password_confirmation]'placeholder = 'Confirm Password'>
       <button type = 'submit'>Sign Up!</button>
     </form>
-    <form id= "sign-in">
-      <input type = 'text' name = 'credentials[email]' placeholder = 'E-mail'>
-      <input type = 'password' name = 'credentials[password]' placeholder = 'Password'>
-      <button type = 'submit'>Login</button>
-    </form>
-    <div class="app-name">Crypto Tracker</div>
+  </div>
       <div class="nav-buttons">
-        <button id="getCryptoAssets" class="btn btn-info mr-2">Get Assets!</button>
-        <button id="clearCryptoAssets" class="btn btn-outline-info">Clear Assets!</button>
+        <button id="getCryptoAssets" class="">Get Assets!</button>
+        <button id="clearCryptoAssets" class="">Clear Assets!</button>
       </div>
-    <main>
-      <div id="content" class="content"></div>
-    </main>
-    </body>
+
+<div class = 'auth'>
+  <form id= "sign-in">
+    <input type = 'text' name = 'credentials[email]' placeholder = 'E-mail'>
+    <input type = 'password' name = 'credentials[password]' placeholder = 'Password'>
+    <button type = 'submit'>Sign In!</button>
+  </form>
+ </div>
+
+<p></p>
+<div class = 'container'>
+  <p>Cyptro Asset</p>
+<form id = 'createCrypto'>
+  <div class='col-4 box'>
+  <input  type = 'text' placeholder = 'Asset'>
+</div>
+<div class='col-4 box'>
+  <input  type = 'text' placeholder = 'Amount'>
+</div>
+<div class='col-4 box'>
+  <input  type = 'text' placeholder = 'Exchange'>
+</div>
+  <button type = 'submit'>Add Asset!</button>
+</form>
+</div>
+<main>
+  <div id="content" class="content"></div>
+</main>
+
+</body>
 </html>

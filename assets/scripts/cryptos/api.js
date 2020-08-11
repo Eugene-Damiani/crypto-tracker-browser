@@ -7,7 +7,7 @@ const getCryptoAssets = function () {
   return $.ajax({
     url: config.apiUrl + '/cryptos',
     headers: {
-      Authorization: 'Token token=' + store.user.token
+      Authorization: 'Bearer ' + store.user.token
     }
   })
 }
@@ -17,7 +17,7 @@ const createCrypto = function (formData) {
     method: 'POST',
     url: config.apiUrl + '/cryptos/' + formData.crypto,
     headers: {
-      Authorization: 'Token token=' + store.user.token
+      Authorization: 'Bearer ' + store.user.token
     },
     data: {
       crypto: {
@@ -34,7 +34,7 @@ const updateCrypto = function (formData) {
     method: 'PATCH',
     url: config.apiUrl + '/cryptos/' + formData.crypto.id,
     headers: {
-      Authorization: 'Token token=' + store.user.token
+      Authorization: 'Bearer ' + store.user.token
     },
     data: {
       crypto: {
@@ -51,7 +51,7 @@ const deleteCrypto = function (id) {
     url: config.apiUrl + '/cryptos/' + id,
     method: 'DELETE',
     headers: {
-      Authorization: 'Token token=' + store.user.token
+      Authorization: 'Bearer ' + store.user.token
     }
   })
 }

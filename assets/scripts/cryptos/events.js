@@ -34,7 +34,7 @@ const onCryptoUpdate = function (event) {
   const data = getFormFields(form)
   console.log(data)
 
-  api.booksUpdate(data)
+  api.updateCrypto(data)
     .then(ui.updateCryptoSuccess)
     .catch(ui.updateCryptoFailure)
 }

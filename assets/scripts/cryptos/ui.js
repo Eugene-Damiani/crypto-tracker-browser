@@ -2,6 +2,9 @@
 
 const showCryptoAsset = require ('../templates/crypto-assets.handlebars')
 
+$('#getCryptoAssets').hide()
+$('#clearCryptoAssets').hide()
+
 const getCryptoSuccess = (data) => {
   console.log(data)
   const showCryptoHtml = showCryptoAsset({ cryptos: data.crypto })
