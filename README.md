@@ -1,6 +1,8 @@
 
   ## Cyrpto Tracker
-    The purpose of thie site is to keep track of your current holdings of your currency and the location. This will simply your life and make sure you never forget which exchange or amount.
+  
+    The purpose of thie site is to keep track of your current holdings of your currency and the location. 
+    This will simply your life and make sure you never forget which exchange or amount.
     
   ##  Important Links
   
