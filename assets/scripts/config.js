@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: 'hhttps://intense-everglades-73204.herokuapp.com/sign-in',
+  production: 'https://intense-everglades-73204.herokuapp.com/',
   development: 'http://localhost:4741'
 }
 

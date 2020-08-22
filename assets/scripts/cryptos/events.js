@@ -3,18 +3,15 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields')
+const store = require('../store')
 
-const onCryptoAssets = (event) => {
+const onIndexCrypto = (event) => {
   event.preventDefault()
-  api.cryptoAssets()
+  const userCrypto = store.user.token
+
+  api.cryptoIndex(userCrypto)
     .then(ui.getCryptoSuccess)
     .catch(ui.getCryptoFailure)
-}
-
-const onClearAssets = (event) => {
-  event.preventDefault()
-    .then(ui.clearCryptoSuccess)
-    .catch(ui.clearCryptoFailure)
 }
 
 const onCreateCrypto = function (event) {
@@ -23,34 +20,33 @@ const onCreateCrypto = function (event) {
   const formData = getFormFields(form)
 
   api.createCrypto(formData)
+    .then(() => onIndexCrypto(event))
     .then(ui.createCryptoSuccess)
     .catch(ui.createCryptoFailure)
 }
 
 const onCryptoUpdate = function (event) {
   event.preventDefault()
-
   const form = event.target
   const data = getFormFields(form)
-  console.log(data)
+  const cryptoId = $(event.target).closest('section').data('id')
 
-  api.updateCrypto(data)
+  api.updateCrypto(data, cryptoId)
     .then(ui.updateCryptoSuccess)
     .catch(ui.updateCryptoFailure)
 }
 
 const onDeleteCrypto = function (event) {
-  const form = event.target
-  const data = getFormFields(form)
+  event.preventDefault()
+  const cryptoId = $(event.target).closest('section').data('id')
+  api.deleteCrypto(cryptoId)
 
-  api.deleteCrypto(data.crypto.id)
     .then(ui.deleteCryptoSuccess)
     .catch(ui.deleteCryptoFailure)
 }
 
 module.exports = {
-  onCryptoAssets,
-  onClearAssets,
+  onIndexCrypto,
   onCreateCrypto,
   onCryptoUpdate,
   onDeleteCrypto

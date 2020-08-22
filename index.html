@@ -11,46 +11,51 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+
     <body>
+
     <nav class="navbar">
     <h2 id = 'message'> </h2>
-
       <h1>
       <img src ='assets/styles/Brave.png' alt= 'bitcoin' width = '60' height="50">Crypto Tracker</h1>
     </nav>
+
 <form id ="change-password">
 <input type= 'password' name='passwords[old]' placeholder ='Old Password'>
 <input type= 'password' name='passwords[new]' placeholder = 'New Password'>
   <button type = 'submit'> Change Password</button>
 </form>
+
 <form id='sign-out'>
 <button type = 'submit'>Sign Out</button>
 </form>
-<p></p>
-<div class = 'auth'>
-    <form id="sign-up">
-      <p></p>
+<!-- sign up  form-->
+     <div class = 'auth'>
+     <form id="sign-up">
       <input type = 'text' name='credentials[email]' placeholder = 'E-mail'>
       <input type = 'password' name='credentials[password]' placeholder = 'Password'>
       <input type =  'password' name='credentials[password_confirmation]'placeholder = 'Confirm Password'>
       <button type = 'submit'>Sign Up!</button>
-    </form>
-  </div>
+      </form>
+      </div>
+
+
       <div class="nav-buttons">
         <button id="getCryptoAssets" class="">Get Assets!</button>
         <button id="clearCryptoAssets" class="">Clear Assets!</button>
       </div>
 
-<div class = 'auth'>
-  <form id= "sign-in">
+
+<!-- Signin Form -->
+    <div class = 'auth'>
+    <form id= "sign-in">
     <input type = 'text' name = 'credentials[email]' placeholder = 'E-mail'>
     <input type = 'password' name = 'credentials[password]' placeholder = 'Password'>
     <button type = 'submit'>Sign In!</button>
-  </form>
- </div>
+    </form>
+    </div>
 
-<p></p>
-<div class = 'container'>
+  <div class = 'container'>
   <p>Cyptro Asset</p>
 <form id = 'createCrypto'>
   <div class='col-4 box'>
@@ -65,9 +70,37 @@
   <button type = 'submit'>Add Asset!</button>
 </form>
 </div>
-<main>
-  <div id="content" class="content"></div>
-</main>
+
+
+<!-- Button to get index -->
+        <section>
+          <div class="column">
+           <button id="cryptoIndex">All Assets</button>
+           <div id="content" class="content"></div>
+         </div>
+       </section>
+
+
+
+
+<!-- Form for Update -->
+<div>
+  <form id="updateCryptoAsset">
+    <div>
+    <input  type = 'text' placeholder = 'ID'>
+  </div>
+    <div>
+    <input  type = 'text' placeholder = 'Asset'>
+  </div>
+  <div>
+    <input  type = 'text' placeholder = 'Amount'>
+  </div>
+  <div>
+    <input  type = 'text' placeholder = 'Exchange'>
+  </div>
+    <button type = 'submit'>Update Asset!</button>
+  </form>
+</div>
 
 </body>
 </html>

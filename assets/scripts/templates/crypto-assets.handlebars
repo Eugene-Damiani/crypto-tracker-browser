@@ -1,7 +1,7 @@
 {{#each cyptos as |crypto|}}
   {{log crypto}}
   <section data-id="{{crypto.id}}">
-    <h6>Asset:</h6>
+    <h6>Assets:</h6>
     <h3>
       {{limit crypto.asset 20}}
     </h3>
@@ -21,7 +21,7 @@
         No Exchange listed
         {{/if}}
     </p>
-     <button type="submit" id="deleteCryptoAsset">Remove</button>
+     <button type="submit" id="deleteCryptoAsset" data-id="{{crypto._id}}">Delete</button>
   </section>
 
 {{/each}}

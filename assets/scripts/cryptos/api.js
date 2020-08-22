@@ -3,61 +3,54 @@
 const config = require('../config')
 const store = require('../store')
 
-const getCryptoAssets = function () {
+const cryptoIndex = function () {
   return $.ajax({
-    url: config.apiUrl + '/cryptos',
     headers: {
       Authorization: 'Bearer ' + store.user.token
+    },
+    url: config.apiUrl + '/cryptos',
+    method: 'GET',
+    data: {
+      crypto: []
     }
   })
 }
 
 const createCrypto = function (formData) {
   return $.ajax({
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    url: config.apiUrl + '/cryptos',
     method: 'POST',
-    url: config.apiUrl + '/cryptos/' + formData.crypto,
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
-    data: {
-      crypto: {
-        asset: formData.crypto.asset,
-        amount: formData.crypto.amount,
-        exchange: formData.cypto.exchange
-      }
-    }
+    user: store.user,
+    data: formData
   })
 }
 
-const updateCrypto = function (formData) {
+const updateCrypto = function (cryptoId, formData) {
   return $.ajax({
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    url: config.apiUrl + '/cryptos/' + cryptoId,
     method: 'PATCH',
-    url: config.apiUrl + '/cryptos/' + formData.crypto.id,
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
-    data: {
-      crypto: {
-        asset: formData.crypto.asset,
-        amount: formData.crypto.amount,
-        exchange: formData.crypto.exchange
-      }
-    }
+    data: formData
   })
 }
 
-const deleteCrypto = function (id) {
+const deleteCrypto = function (cryptoId) {
   return $.ajax({
-    url: config.apiUrl + '/cryptos/' + id,
-    method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.user.token
-    }
+    },
+    url: config.apiUrl + '/cryptos/' + cryptoId,
+    method: 'DELETE'
   })
 }
 
 module.exports = {
-  getCryptoAssets,
+  cryptoIndex,
   createCrypto,
   updateCrypto,
   deleteCrypto
