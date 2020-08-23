@@ -20,7 +20,6 @@ const onCreateCrypto = function (event) {
   const formData = getFormFields(form)
 
   api.createCrypto(formData)
-    .then(() => onIndexCrypto(event))
     .then(ui.createCryptoSuccess)
     .catch(ui.createCryptoFailure)
 }

@@ -11,6 +11,7 @@ $(() => {
 
   $('#cryptoIndex').on('click', cryptoEvents.onIndexCrypto)
   $('#updateCryptoAsset').on('submit', cryptoEvents.onCryptoUpdate)
+  // Need to add delete button to my HTML or handlebars
   $('#deleteCryptoAsset').on('click', cryptoEvents.onDeleteCrypto)
   $('#createCrypto').on('submit', cryptoEvents.onCreateCrypto)
 })

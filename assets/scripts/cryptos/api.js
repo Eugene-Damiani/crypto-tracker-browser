@@ -17,35 +17,35 @@ const cryptoIndex = function () {
 }
 
 const createCrypto = function (formData) {
+  console.log(formData)
   return $.ajax({
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
     url: config.apiUrl + '/cryptos',
     method: 'POST',
-    user: store.user,
-    data: formData
+    data: formData.crypto
   })
 }
 
-const updateCrypto = function (cryptoId, formData) {
+const updateCrypto = function (formData, cryptoId) {
   return $.ajax({
+    url: config.apiUrl + '/cryptos' + cryptoId,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    url: config.apiUrl + '/cryptos/' + cryptoId,
     method: 'PATCH',
-    data: formData
+    data: formData.crypto
   })
 }
 
-const deleteCrypto = function (cryptoId) {
+const deleteCrypto = cryptoId => {
   return $.ajax({
+    url: config.apiUrl + '/cryptos' + cryptoId,
+    method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.user.token
-    },
-    url: config.apiUrl + '/cryptos/' + cryptoId,
-    method: 'DELETE'
+    }
   })
 }
 

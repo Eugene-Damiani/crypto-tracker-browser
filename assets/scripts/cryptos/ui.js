@@ -24,7 +24,7 @@ const getCryptoFailure = function () {
   $('#message').text('Failed To Load')
 }
 
-const createCryptoSuccess = (data) => {
+const createCryptoSuccess = () => {
   $('form').trigger('reset')
   $('#message').text('New Asset Added!')
 }
