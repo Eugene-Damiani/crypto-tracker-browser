@@ -3,7 +3,7 @@
   <section data-id="{{crypto.id}}">
     <h6>Asset:</h6>
     <h3>
-      {{limit crypto.asset 20}}
+      {{limit crypto.asset 15}}
     </h3>
     <h6>Amount:</h6>
     <p>
@@ -20,7 +20,9 @@
         {{else}}
         No Exchange listed
         {{/if}}
+        <button type="submit" class="btn btn-outline-danger deleteCryptoAsset" data-id="{{crypto._id}}">Delete</button>
     </p>
+    {{> partial}}
   </section>
 
 {{/each}}

@@ -1,7 +1,11 @@
 const store = require('../store')
 
 const signUpSuccess = function () {
-  $('#message').text('Looking Fresh! Login And \nYou Are Ready to Go!')
+  $('#message').text('Welcome to the Future now SignIn')
+  $('#change-password').hide()
+  $('#sign-out').hide()
+  $('.updateCryptoAsset').hide()
+  $('#getCryptoIndex').hide()
   $('form').trigger('reset')
   $('#sign-up').hide()
 }
@@ -12,11 +16,21 @@ const signUpFailure = function () {
 }
 
 const signInSuccess = function (response) {
-  $('#message').text('Click On StartGame To Get Tic Tac Toeing')
+  $('#message').text('Welcome to Finance 2.0')
+
   console.log(store)
   store.user = response.user
   console.log('store ', store)
   $('form').trigger('reset')
+
+  $('#change-password').show()
+  $('#sign-in').hide()
+  $('#sign-up').hide()
+  $('#sign-out').show()
+  $('#authenticated').show()
+  $('.updateCryptoAsset').show()
+  $('.container').show()
+  $('#getCryptoIndex').show()
 }
 
 const signInFailure = function () {
@@ -38,6 +52,14 @@ const signOutSuccess = function () {
   $('#message').text('You have signed out')
   store.user = null
   $('form').trigger('reset')
+  $('#sign-in').show()
+  $('#sign-up').show()
+  $('#authenticated').hide()
+  $('#change-password').hide()
+  $('#sign-out').hide()
+  $('.updateCryptoAsset').hide()
+  $('.container').hide()
+  $('#getCryptoIndex').hide()
 }
 
 const signOutFailure = function () {

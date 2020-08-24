@@ -3,11 +3,15 @@
 const config = require('../config')
 const store = require('../store')
 
-const getCryptoAssets = function () {
+const cryptoIndex = function () {
   return $.ajax({
-    url: config.apiUrl + '/cryptos',
     headers: {
-      Authorization: 'Token token=' + store.user.token
+      Authorization: 'Bearer ' + store.user.token
+    },
+    url: config.apiUrl + '/cryptos',
+    method: 'GET',
+    data: {
+      crypto: []
     }
   })
 }
@@ -23,7 +27,7 @@ const createCrypto = function (formData) {
       crypto: {
         asset: formData.crypto.asset,
         amount: formData.crypto.amount,
-        exchange: formData.cypto.exchange
+        exchange: formData.crypto.exchange
       }
     }
   })
@@ -46,18 +50,20 @@ const updateCrypto = function (formData) {
   })
 }
 
-const deleteCrypto = function (id) {
+const deleteCrypto = function (cryptoid) {
   return $.ajax({
-    url: config.apiUrl + '/cryptos/' + id,
+    url: config.apiUrl + '/cryptos/' + cryptoid,
     method: 'DELETE',
     headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
+      Authorization: 'Bearer ' + store.user.token
+    },
+    user: store.user,
+    data: { crypto }
   })
 }
 
 module.exports = {
-  getCryptoAssets,
+  cryptoIndex,
   createCrypto,
   updateCrypto,
   deleteCrypto

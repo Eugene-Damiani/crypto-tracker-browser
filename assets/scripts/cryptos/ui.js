@@ -1,38 +1,21 @@
 'use strict'
 
-const showCryptoAsset = require ('../templates/crypto-assets.handlebars')
+const showCryptoAsset = require('../templates/crypto-assets.handlebars')
 
-const getCryptoSuccess = (data) => {
+const getCryptoIndexSuccess = (data) => {
   console.log(data)
   const showCryptoHtml = showCryptoAsset({ cryptos: data.crypto })
   $('.content').append(showCryptoHtml)
   $('#message').text('Welcome To Your Tracker')
 }
 
-const getCryptoFailure = function () {
+const getCryptoIndexFailure = function () {
   $('#message').text('Failed To Load')
-}
-
-const clearCryptoSuccess = () => {
-  $('.content').empty()
-  $('#message').text('Private Mode')
-}
-
-const clearCryptoFailure = () => {
-  $('#message').text('Failed To Clear')
 }
 
 const createCryptoSuccess = (data) => {
   $('form').trigger('reset')
-
   $('#message').text('New Asset Added!')
-
-  const newCrypto = (`
-    <h3>Asset: ${data.crypto.asset}</h3>
-    <p>Amount: ${data.crypto.amount}</p>
-    <p>Exchange: ${data.crypto.exchange}</p>
-      `)
-  $('#content').html(newCrypto)
 }
 
 const createCryptoFailure = function () {
@@ -42,7 +25,7 @@ const createCryptoFailure = function () {
 
 const updateCryptoSuccess = function () {
   $('form').trigger('reset')
-  $('#message').text('New Asset Added!')
+  $('#update-message').text('Asset Updated!')
 }
 
 const updateCryptoFailure = function () {
@@ -61,10 +44,8 @@ const deleteCryptoFailure = function () {
 }
 
 module.exports = {
-  getCryptoSuccess,
-  getCryptoFailure,
-  clearCryptoSuccess,
-  clearCryptoFailure,
+  getCryptoIndexSuccess,
+  getCryptoIndexFailure,
   createCryptoSuccess,
   createCryptoFailure,
   updateCryptoSuccess,

@@ -3,7 +3,7 @@
 let apiUrl
 const apiUrls = {
   production: 'https://intense-everglades-73204.herokuapp.com',
-  development: 'https://intense-everglades-73204.herokuapp.com'
+  development: 'http://localhost:4741'
 }
 
 if (window.location.hostname === 'localhost') {
