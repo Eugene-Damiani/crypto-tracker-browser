@@ -10,8 +10,8 @@ const onIndexCrypto = (event) => {
   const userCrypto = store.user.token
 
   api.cryptoIndex(userCrypto)
-    .then(ui.getCryptoSuccess)
-    .catch(ui.getCryptoFailure)
+    .then(ui.getCryptoIndexSuccess)
+    .catch(ui.getCryptoIndexFailure)
 }
 
 const onCreateCrypto = function (event) {

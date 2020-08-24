@@ -2,6 +2,8 @@ const store = require('../store')
 
 $('#change-password').hide()
 $('#sign-out').hide()
+$('.updateCryptoAsset').hide()
+$('#getCryptoIndex').hide()
 
 const signUpSuccess = function () {
   $('#message').text('You Are One Step Closer')
@@ -24,6 +26,10 @@ const signInSuccess = function (response) {
   $('#sign-in').hide()
   $('#sign-up').hide()
   $('#sign-out').show()
+  $('#authenticated').show()
+  $('.updateCryptoAsset').show()
+  $('.container').show()
+  $('#getCryptoIndex').show()
 }
 
 const signInFailure = function () {
@@ -47,6 +53,12 @@ const signOutSuccess = function () {
   $('form').trigger('reset')
   $('#sign-in').show()
   $('#sign-up').show()
+  $('#authenticated').hide()
+  $('#change-password').hide()
+  $('#sign-out').hide()
+  $('.updateCryptoAsset').hide()
+  $('.container').hide()
+  $('#getCryptoIndex').hide()
 }
 
 const signOutFailure = function () {

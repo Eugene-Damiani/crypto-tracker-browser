@@ -9,9 +9,9 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
 
-  $('#cryptoIndex').on('click', cryptoEvents.onIndexCrypto)
-  $('#updateCryptoAsset').on('submit', cryptoEvents.onCryptoUpdate)
-  // Need to add delete button to my HTML or handlebars
-  $('#deleteCryptoAsset').on('click', cryptoEvents.onDeleteCrypto)
+  $('#getCryptoIndex').on('click', cryptoEvents.onIndexCrypto)
+  $('.updateCryptoAsset').on('submit', cryptoEvents.onCryptoUpdate)
+
+  $('.deleteCryptoAsset').on('click', cryptoEvents.onDeleteCrypto)
   $('#createCrypto').on('submit', cryptoEvents.onCreateCrypto)
 })

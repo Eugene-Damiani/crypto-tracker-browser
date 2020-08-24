@@ -24,6 +24,7 @@ const createCrypto = function (formData) {
     },
     url: config.apiUrl + '/cryptos',
     method: 'POST',
+    user: store.user,
     data: formData.crypto
   })
 }
