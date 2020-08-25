@@ -1,5 +1,5 @@
 #!/bin/bash
-curl "https://intense-everglades-73204.herokuapp.com/sign-up" \
+curl "http://localhost:4741/sign-up" \
 --include \
 --request POST \
 --header "Content-Type: application/json" \

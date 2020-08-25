@@ -1,4 +1,4 @@
-curl "https://intense-everglades-73204.herokuapp.com/cryptos/${ID}"\
+curl "http://localhost:4741/cryptos/${ID}"\
  --include \
  --request DELETE \
 

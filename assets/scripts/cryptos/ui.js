@@ -4,9 +4,10 @@ const showCryptoAsset = require('../templates/crypto-assets.handlebars')
 
 const getCryptoIndexSuccess = (data) => {
   console.log(data)
-  const showCryptoHtml = showCryptoAsset({ cryptos: data.crypto })
-  $('.content').append(showCryptoHtml)
+  const showCryptoHtml = showCryptoAsset({ cryptos: data.cryptos })
   $('#message').text('Welcome To Your Tracker')
+$('#content').show(data)
+  $('.content').append(showCryptoHtml)
 }
 
 const getCryptoIndexFailure = function () {

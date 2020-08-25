@@ -1,6 +1,12 @@
 {{#each cyptos as |crypto|}}
   {{log crypto}}
   <section data-id="{{crypto.id}}">
+    <h6>ID:
+      {{#if recipe._id}}
+        {{recipe._id}}
+      {{else}}
+      No ID provided.
+      {{/if}}
     <h6>Asset:</h6>
     <h3>
       {{limit crypto.asset 15}}

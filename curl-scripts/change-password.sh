@@ -1,4 +1,4 @@
-curl 'https://intense-everglades-73204.herokuapp.com/change-password' \
+curl 'http://localhost:4741/change-password' \
 --include \
 --request PATCH \
 --header "Authorization: Bearer ${TOKEN}" \

@@ -1,4 +1,4 @@
-curl 'https://intense-everglades-73204.herokuapp.com/asset' \
+curl 'http://localhost:4741/cryptos' \
   --include \
   --request POST \
   --header "Content-Type: application/json" \

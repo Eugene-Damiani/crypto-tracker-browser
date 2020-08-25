@@ -1,5 +1,10 @@
 const store = require('../store')
 
+$('#sign-out').hide()
+$('.updateCryptoAsset').hide()
+$('#getCryptoIndex').hide()
+$('#change-password').hide()
+
 const signUpSuccess = function () {
   $('#message').text('Welcome to the Future now SignIn')
   $('#change-password').hide()

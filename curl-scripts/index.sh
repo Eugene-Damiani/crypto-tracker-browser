@@ -1,4 +1,4 @@
-curl 'https://intense-everglades-73204.herokuapp.com/cryptos' \
+curl 'http://localhost:4741/cryptos' \
   --include \
   --request GET \
   --header "Authorization: Bearer ${TOKEN}"

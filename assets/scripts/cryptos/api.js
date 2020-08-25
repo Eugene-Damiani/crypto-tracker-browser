@@ -18,18 +18,12 @@ const cryptoIndex = function () {
 
 const createCrypto = function (formData) {
   return $.ajax({
-    method: 'POST',
-    url: config.apiUrl + '/cryptos/' + formData.crypto,
     headers: {
-      Authorization: 'Token token=' + store.user.token
+      Authorization: 'Bearer ' + store.user.token
     },
-    data: {
-      crypto: {
-        asset: formData.crypto.asset,
-        amount: formData.crypto.amount,
-        exchange: formData.crypto.exchange
-      }
-    }
+    url: config.apiUrl + '/cryptos',
+    method: 'POST',
+    data: formData
   })
 }
 
